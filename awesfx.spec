@@ -1,5 +1,7 @@
 Summary:	Utility programs for the AWE32 sound driver
 Summary(pl):	Programy pomocnicze dla sterownika SoundBlastera AWE32
+Summary(ru):	Утилиты для звукового драйвера AWE32
+Summary(uk):	Утил╕ти для звукового драйвера AWE32
 Name:		awesfx
 Version:	0.4.4
 Release:	1
@@ -35,6 +37,12 @@ sterownika SoundBlastera AWE32. Pakiet zawiera nastЙpuj╠ce programy:
  - text2sf - konwerter z postaci tekstowej na SoundFont
  - gusload - program Ёaduj╠cy pliki PAT karty Gravis UltraSound
  - sfxtest - przykЁadowy program wykorzystuj╠cy sterownika AWE
+
+%description -l ru
+Пакет awesfx включает утилиты для звуковой карты AWE32.
+
+%description -l uk
+Пакет awesfx м╕стить утил╕ти для звуково╖ карти AWE32.
 
 %package devel
 Summary:	Header files for programs using AWE library

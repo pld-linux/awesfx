@@ -61,15 +61,15 @@ cd ..
 
 %build
 xmkmf
-make Makefiles
-make OPT_FLAGS="$RPM_OPT_FLAGS"
+%{__make} Makefiles
+%{__make} OPT_FLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_mandir}/man1,%{_bindir},/bin} \
 	$RPM_BUILD_ROOT%{_datadir}/midi/{soundfont,virtualbank}
 
-make install install.man \
+%{__make} install install.man \
 	DESTDIR=$RPM_BUILD_ROOT \
 	_MANDIR=%{_mandir}
 

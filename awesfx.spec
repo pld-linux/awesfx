@@ -92,7 +92,7 @@ unzip %{SOURCE2}
 %build
 xmkmf
 %{__make} Makefiles
-%{__make} OPT_FLAGS="%{rpmcflags}"
+%{__make} OPT_FLAGS="%{rpmcflags}" SOSYMLINK="true"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -101,7 +101,8 @@ install -d $RPM_BUILD_ROOT{%{_mandir}/man1,%{_bindir},/bin} \
 
 %{__make} install install.man \
 	DESTDIR=$RPM_BUILD_ROOT \
-	_MANDIR=%{_mandir}
+	_MANDIR=%{_mandir} \
+	SOSYMLINK="true"
 
 mv -f $RPM_BUILD_ROOT%{_bindir}/sfxload $RPM_BUILD_ROOT/bin/
 mv -f gu11-rom/GU11-ROM.SF2 $RPM_BUILD_ROOT%{_datadir}/midi/soundfont/gu11-rom.sf2

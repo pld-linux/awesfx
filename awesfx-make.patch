@@ -5,7 +5,7 @@ diff -urN awesfx-0.4.3c.orig/Imakefile awesfx-0.4.3c/Imakefile
  
  /*CDEBUGFLAGS=-g*/
  CDEBUGFLAGS=-Wall
-+CCOPTIONS=$(RPM_OPT_FLAGS)
++CCOPTIONS=$(OPT_FLAGS)
  
  #include "awelib/config.h"
  
@@ -70,7 +70,7 @@ diff -urN awesfx-0.4.3c.orig/awelib/Imakefile awesfx-0.4.3c/awelib/Imakefile
  LIBVER = 0.4.3
  
 -INSTDIR = /usr/local
-+CCOPTIONS=$(RPM_OPT_FLAGS)
++CCOPTIONS=$(OPT_FLAGS)
 +
 +INSTDIR = /usr
  

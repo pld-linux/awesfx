@@ -19,6 +19,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	unzip
+Obsoletes:	awesfx-devel
 ExclusiveArch:	%{ix86} alpha ppc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -77,7 +78,7 @@ mv -f $RPM_BUILD_ROOT%{_bindir}/sfxload $RPM_BUILD_ROOT/bin
 mv -f $RPM_BUILD_ROOT%{_bindir}/asfxload $RPM_BUILD_ROOT/bin
 cp -f gu11-rom/GU11-ROM.{INS,SF2} $RPM_BUILD_ROOT%{_datadir}/sounds/sf2
 rm -f $RPM_BUILD_ROOT%{_mandir}/man1/asfxload.1
-cp $RPM_BUILD_ROOT%{_mandir}/man1/sfxload.1 $RPM_BUILD_ROOT%{_mandir}/man1/asfxload.1
+echo '.so sfxload.1' > $RPM_BUILD_ROOT%{_mandir}/man1/asfxload.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT

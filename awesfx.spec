@@ -7,9 +7,12 @@ Version:	0.4.4
 Release:	3
 License:	GPL/distributable
 Group:		Applications/Sound
-Source0:	http://mitglied.tripod.de/iwai/%{name}-%{version}.tgz
-# Source0-md5:	13753e8ecf106b0471a9fa4ede664e3f
-Source2:	http://www.pvv.org/~thammer/localfiles/soundfonts_other/gu11-rom.zip
+Source0:	http://mitglied.lycos.de/iwai/%{name}-%{version}.tgz
+# Source0-md5:	29ab2bdd3b55f038c7b7492202b6e20c
+#
+# Source1:	http://www.pvv.org/~thammer/localfiles/soundfonts_other/gu11-rom.zip
+Source1:	gu11-rom.zip
+# Source1-md5:	fe8f019945c0cbfc2d38dc5f0f94eb24
 Patch0:		%{name}-make.patch
 Patch1:		%{name}-etc_dir.patch
 URL:		http://mitglied.tripod.de/iwai/awedrv.html#Utils

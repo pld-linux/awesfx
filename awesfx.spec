@@ -6,13 +6,15 @@ Release:	2
 License:	GPL/distributable
 Group:		Applications/Sound
 Group(de):	Applikationen/Laut
+Group(es):	Aplicaciones/Sonido
 Group(pl):	Aplikacje/DºwiÍk
+Group(pt_BR):	AplicaÁıes/Som
 Source0:	http://mitglied.tripod.de/iwai/%{name}-%{version}.tgz
 Source2:	http://www.pvv.org/~thammer/localfiles/soundfonts_other/gu11-rom.zip
 Patch0:		%{name}-make.patch
 URL:		http://mitglied.tripod.de/iwai/awedrv.html#Utils
 ExclusiveArch:	%{ix86} alpha
-BuildPrereq:	unzip
+BuildRequires:	unzip
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -43,8 +45,12 @@ Summary:	Header files for programs using AWE library
 Summary(pl):	Pliki nag≥Ûwkowe dla programÛw korzystaj±cych z biblioteki AWE
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Ú¡⁄“¡¬œ‘À¡/‚…¬Ã…œ‘≈À…
+Group(uk):	Úœ⁄“œ¬À¡/‚¶¬Ã¶œ‘≈À…
 Requires:	%{name} = %{version}
 
 %description devel
@@ -84,11 +90,11 @@ mv -f samples/* $RPM_BUILD_ROOT%{_datadir}/midi/virtualbank
 gzip -9nf docs/{ChangeLog.sfx,README,SBKtoSF2.txt} \
 	gu11-rom/*
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
-
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)

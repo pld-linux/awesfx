@@ -3,12 +3,12 @@ Summary(pl):	Programy pomocnicze dla sterownika SoundBlastera AWE32
 Summary(ru):	Утилиты для звукового драйвера AWE32
 Summary(uk):	Утил╕ти для звукового драйвера AWE32
 Name:		awesfx
-Version:	0.5.0a
+Version:	0.5.0c
 Release:	1
 License:	GPL v2
 Group:		Applications/Sound
 Source0:	http://www.alsa-project.org/~iwai/%{name}-%{version}.tar.gz
-# Source0-md5:	22dcf8293ef7d2302dcd92a383887de8
+# Source0-md5:	b4f9192dc6357014215a3d06a99d40f2
 # Source1:	http://www.pvv.org/~thammer/localfiles/soundfonts_other/gu11-rom.zip
 Source1:	gu11-rom.zip
 # Source1-md5:	fe8f019945c0cbfc2d38dc5f0f94eb24

@@ -28,7 +28,7 @@ driver. This packaing contains the following programs:
  - sfxtest - example program to control AWE driver
 
 %description -l pl
-Pakiet awesfx zawieta programy niezbêdne dla wykorzystania mo¿liwo¶ci
+Pakiet awesfx zawiera programy niezbêdne dla wykorzystania mo¿liwo¶ci
 sterownika SoundBlastera AWE32. Pakiet zawiera nastêpuj±ce programy:
  - sfxload - program ³aduj±cy SoundFonty
  - setfx - program ³aduj±cy efekty chorus/reverb

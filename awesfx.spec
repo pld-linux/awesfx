@@ -2,29 +2,29 @@ Summary:	Utility programs for the AWE32 sound driver.
 Summary(pl):	Programy pomocnicze dla sterownika SoundBlastera AWE32.
 Name:		awesfx
 Version:	0.4.3c
-Release:	1
+Release:	2
 License:	GPL/distributable
 Group:		Applications/Multimedia
 Group(pl):	Aplikacje/D¼wiêk
-Source:		http://mitglied.tripod.de/iwai/%{name}-%{version}.tgz
+Source0:	http://mitglied.tripod.de/iwai/%{name}-%{version}.tgz
 Source2:	http://www.pvv.org/~thammer/localfiles/soundfonts_other/gu11-rom.zip
-Patch:		awesfx-make.patch
+Patch0:		awesfx-make.patch
 URL:		http://mitglied.tripod.de/iwai/awedrv.html#Utils
 ExclusiveArch:	%{ix86} alpha
 BuildPrereq:	unzip
 BuildRequires:	XFree86-devel
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	/tmp/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The awesfx package contains necessary utilities for the AWE32 sound driver.
 This packaing contains the following programs:
- - sfxload      SoundFont file loader
- - setfx        Chorus/reverb effect loader
- - aweset       Change the running mode of AWE driver
- - sf2text      Convert SoundFont to readable text
- - text2sf      Revert from text to SoundFont file
- - gusload      GUS PAT file loader
- - sfxtest      Example program to control AWE driver
+ - sfxload	SoundFont file loader
+ - setfx	Chorus/reverb effect loader
+ - aweset	Change the running mode of AWE driver
+ - sf2text	Convert SoundFont to readable text
+ - text2sf	Revert from text to SoundFont file
+ - gusload	GUS PAT file loader
+ - sfxtest	Example program to control AWE driver
 
 %description -l pl
 Pakiet awesfx zawieta programy niezbêdne dla wykorzystania mo¿liwo¶ci
@@ -40,6 +40,7 @@ sterownika SoundBlastera AWE32. Pakiet zawiera nastêpuj±ce programy:
 %package devel
 Summary:	Header files for programs using AWE library.
 Group:		Development/Libraries
+Group(fr):	Development/Librairies
 Requires:	%{name} = %{version}
 
 %description devel

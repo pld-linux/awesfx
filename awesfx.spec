@@ -18,7 +18,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The awesfx package contains necessary utilities for the AWE32 sound
-driver. This packaing contains the following programs:
+driver. This package contains the following programs:
  - sfxload - soundFont file loader
  - setfx - chorus/reverb effect loader
  - aweset - change the running mode of AWE driver

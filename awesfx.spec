@@ -85,9 +85,6 @@ mv -f $RPM_BUILD_ROOT%{_bindir}/sfxload $RPM_BUILD_ROOT/bin/
 mv -f gu11-rom/GU11-ROM.SF2 $RPM_BUILD_ROOT%{_datadir}/midi/soundfont/gu11-rom.sf2
 mv -f samples/* $RPM_BUILD_ROOT%{_datadir}/midi/virtualbank
 
-gzip -9nf docs/{ChangeLog.sfx,README,SBKtoSF2.txt} \
-	gu11-rom/*
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -96,7 +93,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc docs/*.gz gu11-rom/*
+%doc docs/{ChangeLog.sfx,README,SBKtoSF2.txt} gu11-rom
 %attr(755,root,root) /bin/*
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*

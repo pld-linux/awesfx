@@ -2,14 +2,14 @@ Summary:	Utility programs for the AWE32 sound driver.
 Summary(pl):	Programy pomocnicze dla sterownika SoundBlastera AWE32.
 Name:		awesfx
 Version:	0.4.3c
-Release:	1
+Release:	3
 License:	GPL/distributable
 Group:		Applications/Multimedia
 Group(pl):	Aplikacje/D¼wiêk
 Source:		http://mitglied.tripod.de/iwai/%{name}-%{version}.tgz
 Source2:	http://www.pvv.org/~thammer/localfiles/soundfonts_other/gu11-rom.zip
 Patch:		awesfx-make.patch
-URL:		http://mitglied.tripod.de/iwai/awedrv.html
+URL:		http://mitglied.tripod.de/iwai/awedrv.html#Utils
 ExclusiveArch:	%{ix86} alpha
 BuildRequires:	XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
@@ -67,7 +67,10 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_mandir}/man1,%{_bindir},/bin} \
 	$RPM_BUILD_ROOT%{_datadir}/midi/{soundfont,virtualbank}
 
-make DESTDIR=$RPM_BUILD_ROOT _MANDIR=%{_mandir} install install.man
+make install install.man \
+	DESTDIR=$RPM_BUILD_ROOT \
+	_MANDIR=%{_mandir}
+
 mv $RPM_BUILD_ROOT%{_bindir}/sfxload $RPM_BUILD_ROOT/bin/
 mv gu11-rom/GU11-ROM.SF2 $RPM_BUILD_ROOT%{_datadir}/midi/soundfont/gu11-rom.sf2
 mv samples/* $RPM_BUILD_ROOT%{_datadir}/midi/virtualbank
@@ -78,19 +81,22 @@ gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
 
 strip --strip-unneeded $RPM_BUILD_ROOT{/bin/*,%{_libdir}/*}
 
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc docs/*.gz
-%doc gu11-rom/*
-%{_datadir}/midi/*/*
-/usr/lib/*
-%attr(755,root,root)/bin/*
-%attr(755,root,root)%{_bindir}/*
+%doc docs/*.gz gu11-rom/*
+%attr(755,root,root) /bin/*
+%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%{_datadir}/midi
 %{_mandir}/man1/*
 
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/awe
+%attr(755,root,root) %{_libdir}/lib*.so

@@ -4,7 +4,7 @@ Summary(ru):	Утилиты для звукового драйвера AWE32
 Summary(uk):	Утил╕ти для звукового драйвера AWE32
 Name:		awesfx
 Version:	0.5.0d
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/Sound
 Source0:	http://www.alsa-project.org/~iwai/%{name}-%{version}.tar.gz
@@ -20,7 +20,7 @@ BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	unzip
 Obsoletes:	awesfx-devel
-ExclusiveArch:	%{ix86} alpha ppc
+ExclusiveArch:	%{ix86} alpha amd64 ppc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

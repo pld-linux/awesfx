@@ -9,16 +9,15 @@ License:	GPL/distributable
 Group:		Applications/Sound
 Source0:	http://mitglied.lycos.de/iwai/%{name}-%{version}.tgz
 # Source0-md5:	8318bdb22a12b32a16e4d04a68e197d9
-#
 # Source1:	http://www.pvv.org/~thammer/localfiles/soundfonts_other/gu11-rom.zip
 Source1:	gu11-rom.zip
 # Source1-md5:	fe8f019945c0cbfc2d38dc5f0f94eb24
 Patch0:		%{name}-make.patch
 Patch1:		%{name}-etc_dir.patch
 URL:		http://mitglied.tripod.de/iwai/awedrv.html#Utils
-ExclusiveArch:	%{ix86} alpha ppc
-BuildRequires:	unzip
 BuildRequires:	XFree86-devel
+BuildRequires:	unzip
+ExclusiveArch:	%{ix86} alpha ppc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -65,17 +64,17 @@ bêdziesz potrzebowa³ tych plików.
 
 %prep
 %setup -q
-mkdir gu11-rom
-(cd gu11-rom
-unzip %{SOURCE1}
-)
+install -d gu11-rom
+unzip %{SOURCE1} -d gu11-rom
 %patch0 -p1
 %patch1 -p1
 
 %build
 xmkmf
 %{__make} Makefiles
-%{__make} OPT_FLAGS="%{rpmcflags}" SOSYMLINK="true"
+%{__make} \
+	OPT_FLAGS="%{rpmcflags}" \
+	SOSYMLINK="true"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -87,7 +86,7 @@ install -d $RPM_BUILD_ROOT{%{_mandir}/man1,%{_bindir},/bin} \
 	_MANDIR=%{_mandir} \
 	SOSYMLINK="true"
 
-mv -f $RPM_BUILD_ROOT%{_bindir}/sfxload $RPM_BUILD_ROOT/bin/
+mv -f $RPM_BUILD_ROOT%{_bindir}/sfxload $RPM_BUILD_ROOT/bin
 mv -f gu11-rom/GU11-ROM.SF2 $RPM_BUILD_ROOT%{_datadir}/midi/soundfont/gu11-rom.sf2
 mv -f samples/* $RPM_BUILD_ROOT%{_datadir}/midi/virtualbank
 
@@ -108,5 +107,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/awe
 %attr(755,root,root) %{_libdir}/lib*.so
+%{_includedir}/awe

@@ -13,7 +13,7 @@ URL:		http://mitglied.tripod.de/iwai/awedrv.html#Utils
 ExclusiveArch:	%{ix86} alpha
 BuildPrereq:	unzip
 BuildRequires:	XFree86-devel
-BuildRoot:	/tmp/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The awesfx package contains necessary utilities for the AWE32 sound driver.

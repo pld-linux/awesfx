@@ -10,7 +10,7 @@ Group:		Applications/Sound
 Source0:	http://mitglied.tripod.de/iwai/%{name}-%{version}.tgz
 Source2:	http://www.pvv.org/~thammer/localfiles/soundfonts_other/gu11-rom.zip
 Patch0:		%{name}-make.patch
-Patch1:		%{name}-home_etc.patch
+Patch1:		%{name}-etc_dir.patch
 URL:		http://mitglied.tripod.de/iwai/awedrv.html#Utils
 ExclusiveArch:	%{ix86} alpha ppc
 BuildRequires:	unzip

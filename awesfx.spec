@@ -9,7 +9,7 @@ Source2:	http://www.pvv.org/~thammer/localfiles/soundfonts_other/gu11-rom.zip
 Source3:	awe_voice.h
 Patch:		awesfx-0.4.3a-make.patch
 License:	GPL/distributable
-ExclusiveArch:	i386 alpha
+ExclusiveArch:	%{ix86} alpha
 BuildRoot:	/tmp/%{name}-%{version}-root
 %description
 The awesfx package contains necessary utilities for the AWE32

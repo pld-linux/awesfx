@@ -1,14 +1,15 @@
-Summary:	Utility programs for the AWE32 sound driver.
-Summary(pl):	Programy pomocnicze dla sterownika SoundBlastera AWE32.
+Summary:	Utility programs for the AWE32 sound driver
+Summary(pl):	Programy pomocnicze dla sterownika SoundBlastera AWE32
 Name:		awesfx
 Version:	0.4.3c
 Release:	2
 License:	GPL/distributable
 Group:		Applications/Sound
+Group(de):	Applikationen/Laut
 Group(pl):	Aplikacje/D¼wiêk
 Source0:	http://mitglied.tripod.de/iwai/%{name}-%{version}.tgz
 Source2:	http://www.pvv.org/~thammer/localfiles/soundfonts_other/gu11-rom.zip
-Patch0:		awesfx-make.patch
+Patch0:		%{name}-make.patch
 URL:		http://mitglied.tripod.de/iwai/awedrv.html#Utils
 ExclusiveArch:	%{ix86} alpha
 BuildPrereq:	unzip
@@ -38,9 +39,12 @@ sterownika SoundBlastera AWE32. Pakiet zawiera nastêpuj±ce programy:
  - sfxtest - przyk³adowy program wykorzystuj±cy sterownika AWE
 
 %package devel
-Summary:	Header files for programs using AWE library.
+Summary:	Header files for programs using AWE library
+Summary(pl):	Pliki nag³ówkowe dla programów korzystaj±cych z biblioteki AWE
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description devel
@@ -54,15 +58,15 @@ bêdziesz potrzebowa³ tych plików.
 %prep
 %setup -q
 mkdir gu11-rom
-cd gu11-rom
-unzip $RPM_SOURCE_DIR/gu11-rom.zip
-cd ..
+(cd gu11-rom
+unzip %{SOURCE2}
+)
 %patch -p1
 
 %build
 xmkmf
 %{__make} Makefiles
-%{__make} OPT_FLAGS="$RPM_OPT_FLAGS"
+%{__make} OPT_FLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -73,15 +77,12 @@ install -d $RPM_BUILD_ROOT{%{_mandir}/man1,%{_bindir},/bin} \
 	DESTDIR=$RPM_BUILD_ROOT \
 	_MANDIR=%{_mandir}
 
-mv $RPM_BUILD_ROOT%{_bindir}/sfxload $RPM_BUILD_ROOT/bin/
-mv gu11-rom/GU11-ROM.SF2 $RPM_BUILD_ROOT%{_datadir}/midi/soundfont/gu11-rom.sf2
-mv samples/* $RPM_BUILD_ROOT%{_datadir}/midi/virtualbank
+mv -f $RPM_BUILD_ROOT%{_bindir}/sfxload $RPM_BUILD_ROOT/bin/
+mv -f gu11-rom/GU11-ROM.SF2 $RPM_BUILD_ROOT%{_datadir}/midi/soundfont/gu11-rom.sf2
+mv -f samples/* $RPM_BUILD_ROOT%{_datadir}/midi/virtualbank
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
-	docs/{ChangeLog.sfx,README,SBKtoSF2.txt} \
+gzip -9nf docs/{ChangeLog.sfx,README,SBKtoSF2.txt} \
 	gu11-rom/*
-
-strip --strip-unneeded $RPM_BUILD_ROOT{/bin/*,%{_libdir}/*}
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig

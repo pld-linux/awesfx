@@ -2,7 +2,7 @@ Summary:	Utility programs for the AWE32 sound driver.
 Summary(pl):	Programy pomocnicze dla sterownika SoundBlastera AWE32.
 Name:		awesfx
 Version:	0.4.3c
-Release:	3
+Release:	1
 License:	GPL/distributable
 Group:		Applications/Multimedia
 Group(pl):	Aplikacje/D¼wiêk

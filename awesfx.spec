@@ -4,12 +4,13 @@ Summary(ru):	Утилиты для звукового драйвера AWE32
 Summary(uk):	Утил╕ти для звукового драйвера AWE32
 Name:		awesfx
 Version:	0.4.4
-Release:	2
+Release:	3
 License:	GPL/distributable
 Group:		Applications/Sound
 Source0:	http://mitglied.tripod.de/iwai/%{name}-%{version}.tgz
 Source2:	http://www.pvv.org/~thammer/localfiles/soundfonts_other/gu11-rom.zip
 Patch0:		%{name}-make.patch
+Patch1:		%{name}-home_etc.patch
 URL:		http://mitglied.tripod.de/iwai/awedrv.html#Utils
 ExclusiveArch:	%{ix86} alpha ppc
 BuildRequires:	unzip
@@ -64,7 +65,8 @@ mkdir gu11-rom
 (cd gu11-rom
 unzip %{SOURCE2}
 )
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 xmkmf

@@ -2,13 +2,24 @@ Summary:	Utility programs for the AWE32 sound driver
 Summary(pl):	Programy pomocnicze dla sterownika SoundBlastera AWE32
 Name:		awesfx
 Version:	0.4.3c
-Release:	2
+Release:	3
 License:	GPL/distributable
 Group:		Applications/Sound
+Group(cs):	Aplikace/Zvuk
+Group(da):	Programmer/Lyd
 Group(de):	Applikationen/Laut
 Group(es):	Aplicaciones/Sonido
+Group(fr):	Aplicações/Son
+Group(is):	Forrit/Hljóğ
+Group(it):	Applicazioni/Audio
+Group(no):	Applikasjoner/Lyd
 Group(pl):	Aplikacje/D¼wiêk
+Group(pt):	Aplicações/Som
 Group(pt_BR):	Aplicações/Som
+Group(ru):	ğÒÉÌÏÖÅÎÉÑ/ú×ÕË
+Group(sl):	Programi/Zvok
+Group(sv):	Tillämpningar/Ljud
+Group(uk):	ğÒÉËÌÁÄÎ¦ ğÒÏÇÒÁÍÉ/ú×ÕË
 Source0:	http://mitglied.tripod.de/iwai/%{name}-%{version}.tgz
 Source2:	http://www.pvv.org/~thammer/localfiles/soundfonts_other/gu11-rom.zip
 Patch0:		%{name}-make.patch
@@ -44,12 +55,21 @@ sterownika SoundBlastera AWE32. Pakiet zawiera nastêpuj±ce programy:
 Summary:	Header files for programs using AWE library
 Summary(pl):	Pliki nag³ówkowe dla programów korzystaj±cych z biblioteki AWE
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
+Group(cs):	Vıvojové prostøedky/Knihovny
+Group(da):	Udvikling/Biblioteker
+Group(de):	Entwicklung/Bibliotheken
 Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
+Group(is):	Şróunartól/Ağgerğasöfn
+Group(it):	Sviluppo/Librerie
+Group(ja):	³«È¯/¥é¥¤¥Ö¥é¥ê
+Group(no):	Utvikling/Bibliotek
 Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(pt):	Desenvolvimento/Bibliotecas
 Group(ru):	òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
+Group(sl):	Razvoj/Knji¾nice
+Group(sv):	Utveckling/Bibliotek
 Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name} = %{version}
 

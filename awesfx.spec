@@ -67,7 +67,7 @@ bêdziesz potrzebowa³ tych plików.
 %setup -q
 mkdir gu11-rom
 (cd gu11-rom
-unzip %{SOURCE2}
+unzip %{SOURCE1}
 )
 %patch0 -p1
 %patch1 -p1

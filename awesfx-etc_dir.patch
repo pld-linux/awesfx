@@ -1,0 +1,26 @@
+diff -Nru awesfx-0.4.4/awelib/config.h awesfx-0.4.4.new/awelib/config.h
+--- awesfx-0.4.4/awelib/config.h	Wed May 31 13:03:30 2000
++++ awesfx-0.4.4.new/awelib/config.h	Sun Mar 23 14:15:42 2003
+@@ -20,6 +20,7 @@
+ /* rc file & command line options */
+ #define SYSTEM_RCFILE		"/etc/sfxloadrc"
+ #define RCFILE			".sfxloadrc"
++#define ETC_DIR_RCFILE "sfxloadrc"
+ 
+ /* big endian machine defines this */
+ #undef BUILD_BIG_ENDIAN
+diff -Nru awesfx-0.4.4/awelib/optfile.c awesfx-0.4.4.new/awelib/optfile.c
+--- awesfx-0.4.4/awelib/optfile.c	Thu Apr 27 13:45:31 2000
++++ awesfx-0.4.4.new/awelib/optfile.c	Sun Mar 23 14:17:31 2003
+@@ -47,6 +47,11 @@
+ 	OptionFile *rec;
+ 
+ 	*rcfile = 0;
++	if ((p = getenv("ETC_DIR")) != NULL && *p) {
++		sprintf(rcfile, "%s/%s", p, ETC_DIR_RCFILE);
++		if (access(rcfile, R_OK) != 0)
++			rcfile[0] = 0;
++	} else
+ 	if ((p = getenv("HOME")) != NULL && *p) {
+ 		sprintf(rcfile, "%s/%s", p, RCFILE);
+ 		if (access(rcfile, R_OK) != 0)

@@ -4,7 +4,7 @@ Name:		awesfx
 Version:	0.4.3c
 Release:	2
 License:	GPL/distributable
-Group:		Applications/Multimedia
+Group:		Applications/Sound
 Group(pl):	Aplikacje/D¼wiêk
 Source0:	http://mitglied.tripod.de/iwai/%{name}-%{version}.tgz
 Source2:	http://www.pvv.org/~thammer/localfiles/soundfonts_other/gu11-rom.zip
@@ -16,26 +16,26 @@ BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The awesfx package contains necessary utilities for the AWE32 sound driver.
-This packaing contains the following programs:
- - sfxload	SoundFont file loader
- - setfx	Chorus/reverb effect loader
- - aweset	Change the running mode of AWE driver
- - sf2text	Convert SoundFont to readable text
- - text2sf	Revert from text to SoundFont file
- - gusload	GUS PAT file loader
- - sfxtest	Example program to control AWE driver
+The awesfx package contains necessary utilities for the AWE32 sound
+driver. This packaing contains the following programs:
+ - sfxload - soundFont file loader
+ - setfx - chorus/reverb effect loader
+ - aweset - change the running mode of AWE driver
+ - sf2text - convert SoundFont to readable text
+ - text2sf - revert from text to SoundFont file
+ - gusload - GUS PAT file loader
+ - sfxtest - example program to control AWE driver
 
 %description -l pl
 Pakiet awesfx zawieta programy niezbêdne dla wykorzystania mo¿liwo¶ci
 sterownika SoundBlastera AWE32. Pakiet zawiera nastêpuj±ce programy:
- - sfxload	Program ³aduj±cy SoundFonty
- - setfx	Program ³aduj±cy efekty chorus/reverb
- - aweset	Zmiana parametrów pracy sterownika AWE
- - sf2text	Konwerter SoundFontów do postaci tekstowej
- - text2sf	Konwerter z postaci tekstowej na SoundFont
- - gusload	Program ³aduj±cy pliki PAT karty Gravis UltraSound
- - sfxtest	Przyk³adowy program wykorzystuj±cy sterownika AWE
+ - sfxload - program ³aduj±cy SoundFonty
+ - setfx - program ³aduj±cy efekty chorus/reverb
+ - aweset - zmiana parametrów pracy sterownika AWE
+ - sf2text - konwerter SoundFontów do postaci tekstowej
+ - text2sf - konwerter z postaci tekstowej na SoundFont
+ - gusload - program ³aduj±cy pliki PAT karty Gravis UltraSound
+ - sfxtest - przyk³adowy program wykorzystuj±cy sterownika AWE
 
 %package devel
 Summary:	Header files for programs using AWE library.
@@ -44,8 +44,8 @@ Group(fr):	Development/Librairies
 Requires:	%{name} = %{version}
 
 %description devel
-If you want to write programs using Sound Blaster AWE WaveTable, you need
-these files.
+If you want to write programs using Sound Blaster AWE WaveTable, you
+need these files.
 
 %description devel -l pl
 Je¶li chcesz pisaæ programy wykorzystuj±ce sterownik SoundBlastera AWE

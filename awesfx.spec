@@ -2,21 +2,26 @@ Summary:	Utility programs for the AWE32 sound driver.
 Name:		awesfx
 Version:	0.4.3b
 Release:	2
+License:	GPL/distributable
 Group:		Applications/Multimedia
-URL:		http//bahamut.mm.t.u-tokyo.ac.jp/~iwai/awedrv/index.html
 Source:		http://bahamut.mm.t.u-tokyo.ac.jp/~iwai/awedrv/%{name}-%{version}.tgz
 Source2:	http://www.pvv.org/~thammer/localfiles/soundfonts_other/gu11-rom.zip
 Source3:	awe_voice.h
 Patch:		awesfx-0.4.3a-make.patch
-License:	GPL/distributable
+URL:		http://bahamut.mm.t.u-tokyo.ac.jp/~iwai/awedrv/
 ExclusiveArch:	%{ix86} alpha
 BuildRoot:	/tmp/%{name}-%{version}-root
-%description
-The awesfx package contains necessary utilities for the AWE32
-sound driver.
 
-If you must use an AWE32 sound driver, you should install
-this package.
+%description
+The awesfx package contains necessary utilities for the AWE32 sound driver.
+This packaing contains the following programs:
+ - sfxload      SoundFont file loader
+ - setfx        Chorus/reverb effect loader
+ - aweset       Change the running mode of AWE driver
+ - sf2text      Convert SoundFont to readable text
+ - text2sf      Revert from text to SoundFont file
+ - gusload      GUS PAT file loader
+ - sfxtest      Example program to control AWE driver
 
 %prep
 %setup -q
@@ -35,26 +40,26 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/{man/man1,bin}
-install -d $RPM_BUILD_ROOT/etc/midi
-install -d $RPM_BUILD_ROOT/bin
-make install
-make install.man
-mv $RPM_BUILD_ROOT/usr/bin/sfxload $RPM_BUILD_ROOT/bin/
+install -d $RPM_BUILD_ROOT{%{_mandir}/man1,%{_bindir},/etc/midi,/bin}
+
+make install install.man
+mv $RPM_BUILD_ROOT%{_bindir}/sfxload $RPM_BUILD_ROOT/bin/
 mv gu11-rom/GU11-ROM.SF2 $RPM_BUILD_ROOT/etc/midi
 
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
+	ChangeLog.sfx README SBKtoSF2.txt bank-samples
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog.sfx README SBKtoSF2.txt bank-samples
+%doc *.gz
 %doc gu11-rom
 /etc/midi/GU11-ROM.SF2
 /bin/sfxload
-/usr/bin/setfx
-/usr/bin/sf2text
-/usr/bin/text2sf
-/usr/bin/gusload
-/usr/bin/sfxtest
-/usr/man/man1/sfxload.1
+%{_bindir}/setfx
+%{_bindir}/sf2text
+%{_bindir}/text2sf
+%{_bindir}/gusload
+%{_bindir}/sfxtest
+%{_mandir}/man1/*

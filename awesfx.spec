@@ -8,6 +8,7 @@ Release:	3
 License:	GPL/distributable
 Group:		Applications/Sound
 Source0:	http://mitglied.tripod.de/iwai/%{name}-%{version}.tgz
+# Source0-md5:	13753e8ecf106b0471a9fa4ede664e3f
 Source2:	http://www.pvv.org/~thammer/localfiles/soundfonts_other/gu11-rom.zip
 Patch0:		%{name}-make.patch
 Patch1:		%{name}-etc_dir.patch

@@ -7,14 +7,14 @@ Version:	0.4.4
 Release:	3
 License:	GPL/distributable
 Group:		Applications/Sound
-Source0:	http://mitglied.lycos.de/iwai/%{name}-%{version}.tgz
+Source0:	http://www.alsa-project.org/~iwai/%{name}-%{version}.tgz
 # Source0-md5:	8318bdb22a12b32a16e4d04a68e197d9
 # Source1:	http://www.pvv.org/~thammer/localfiles/soundfonts_other/gu11-rom.zip
 Source1:	gu11-rom.zip
 # Source1-md5:	fe8f019945c0cbfc2d38dc5f0f94eb24
 Patch0:		%{name}-make.patch
 Patch1:		%{name}-etc_dir.patch
-URL:		http://mitglied.tripod.de/iwai/awedrv.html#Utils
+URL:		http://www.alsa-project.org/~iwai/awedrv.html#Utils
 BuildRequires:	XFree86-devel
 BuildRequires:	unzip
 ExclusiveArch:	%{ix86} alpha ppc

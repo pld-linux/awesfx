@@ -8,7 +8,7 @@ Release:	3
 License:	GPL/distributable
 Group:		Applications/Sound
 Source0:	http://mitglied.lycos.de/iwai/%{name}-%{version}.tgz
-# Source0-md5:	29ab2bdd3b55f038c7b7492202b6e20c
+# Source0-md5:	8318bdb22a12b32a16e4d04a68e197d9
 #
 # Source1:	http://www.pvv.org/~thammer/localfiles/soundfonts_other/gu11-rom.zip
 Source1:	gu11-rom.zip

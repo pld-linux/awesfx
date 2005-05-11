@@ -20,7 +20,7 @@ BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	unzip
 Obsoletes:	awesfx-devel
-ExclusiveArch:	%{ix86} alpha amd64 ppc
+ExclusiveArch:	%{ix86} %{x8664} alpha ppc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

@@ -1,7 +1,7 @@
 Summary:	Utility programs for the AWE32 sound driver
-Summary(pl.UTF-8):   Programy pomocnicze dla sterownika SoundBlastera AWE32
-Summary(ru.UTF-8):   Утилиты для звукового драйвера AWE32
-Summary(uk.UTF-8):   Утиліти для звукового драйвера AWE32
+Summary(pl.UTF-8):	Programy pomocnicze dla sterownika SoundBlastera AWE32
+Summary(ru.UTF-8):	Утилиты для звукового драйвера AWE32
+Summary(uk.UTF-8):	Утиліти для звукового драйвера AWE32
 Name:		awesfx
 Version:	0.5.0d
 Release:	2

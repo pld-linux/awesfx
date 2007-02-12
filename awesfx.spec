@@ -1,7 +1,7 @@
 Summary:	Utility programs for the AWE32 sound driver
-Summary(pl):	Programy pomocnicze dla sterownika SoundBlastera AWE32
-Summary(ru):	Утилиты для звукового драйвера AWE32
-Summary(uk):	Утил╕ти для звукового драйвера AWE32
+Summary(pl.UTF-8):   Programy pomocnicze dla sterownika SoundBlastera AWE32
+Summary(ru.UTF-8):   пёя┌п╦п╩п╦я┌я▀ п╢п╩я▐ п╥п╡я┐п╨п╬п╡п╬пЁп╬ п╢я─п╟п╧п╡п╣я─п╟ AWE32
+Summary(uk.UTF-8):   пёя┌п╦п╩я√я┌п╦ п╢п╩я▐ п╥п╡я┐п╨п╬п╡п╬пЁп╬ п╢я─п╟п╧п╡п╣я─п╟ AWE32
 Name:		awesfx
 Version:	0.5.0d
 Release:	2
@@ -35,23 +35,23 @@ driver. This package contains the following programs:
  - gusload - GUS PAT file loader
  - sfxtest - example program to control AWE driver
 
-%description -l pl
-Pakiet awesfx zawiera programy niezbЙdne dla wykorzystania mo©liwo╤ci
-sterownika SoundBlastera AWE32. Pakiet zawiera nastЙpuj╠ce programy:
- - asfxload - program Ёaduj╠cy SoundFonty dla ALSy
- - sfxload - program Ёaduj╠cy SoundFonty dla emulacji OSS
- - setfx - program Ёaduj╠cy efekty chorus/reverb
- - aweset - zmiana parametrСw pracy sterownika AWE
- - sf2text - konwerter SoundFontСw do postaci tekstowej
+%description -l pl.UTF-8
+Pakiet awesfx zawiera programy niezbд≥dne dla wykorzystania moе╪liwoе⌡ci
+sterownika SoundBlastera AWE32. Pakiet zawiera nastд≥pujд┘ce programy:
+ - asfxload - program е┌adujд┘cy SoundFonty dla ALSy
+ - sfxload - program е┌adujд┘cy SoundFonty dla emulacji OSS
+ - setfx - program е┌adujд┘cy efekty chorus/reverb
+ - aweset - zmiana parametrцЁw pracy sterownika AWE
+ - sf2text - konwerter SoundFontцЁw do postaci tekstowej
  - text2sf - konwerter z postaci tekstowej na SoundFont
- - gusload - program Ёaduj╠cy pliki PAT karty Gravis UltraSound
- - sfxtest - przykЁadowy program wykorzystuj╠cy sterownika AWE
+ - gusload - program е┌adujд┘cy pliki PAT karty Gravis UltraSound
+ - sfxtest - przykе┌adowy program wykorzystujд┘cy sterownika AWE
 
-%description -l ru
-Пакет awesfx включает утилиты для звуковой карты AWE32.
+%description -l ru.UTF-8
+п÷п╟п╨п╣я┌ awesfx п╡п╨п╩я▌я┤п╟п╣я┌ я┐я┌п╦п╩п╦я┌я▀ п╢п╩я▐ п╥п╡я┐п╨п╬п╡п╬п╧ п╨п╟я─я┌я▀ AWE32.
 
-%description -l uk
-Пакет awesfx м╕стить утил╕ти для звуково╖ карти AWE32.
+%description -l uk.UTF-8
+п÷п╟п╨п╣я┌ awesfx п╪я√я│я┌п╦я┌я▄ я┐я┌п╦п╩я√я┌п╦ п╢п╩я▐ п╥п╡я┐п╨п╬п╡п╬я≈ п╨п╟я─я┌п╦ AWE32.
 
 %prep
 %setup -q

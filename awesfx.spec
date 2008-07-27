@@ -4,7 +4,7 @@ Summary(ru.UTF-8):	Утилиты для звукового драйвера AWE
 Summary(uk.UTF-8):	Утиліти для звукового драйвера AWE32
 Name:		awesfx
 Version:	0.5.0d
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Applications/Sound
 Source0:	http://www.alsa-project.org/~iwai/%{name}-%{version}.tar.gz

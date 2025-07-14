@@ -57,7 +57,7 @@ sterownika SoundBlastera AWE32. Pakiet zawiera następujące programy:
 %setup -q
 install -d gu11-rom
 unzip %{SOURCE1} -d gu11-rom
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__libtoolize}
